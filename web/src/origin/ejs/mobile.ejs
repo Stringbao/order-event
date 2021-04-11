@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Thank You!</title>
+    <% if(htmlWebpackPlugin.options.mode == 'development'){   %>
+        <!--#include file="/SystemFragment/global/pc_global_css_js.html" -->
+    <% }else{ %>
+    <% } %>
+    <script src="https://www.recaptcha.net/recaptcha/api.js?hl=en" async defer></script>
+</head>
+<body>
+<div class="thanks_view">
+    <div name="cms-data"
+         data-order-details="{&quot;orderNumber&quot;:&quot;1&quot;,&quot;createTime&quot;:&quot;1&quot;,&quot;customerNumber&quot;:&quot;0&quot;,&quot;repId&quot;:&quot;0&quot;,&quot;email&quot;:&quot;1&quot;}"
+         data-login-link="http://testlink" data-order-tips="adssadasdasfaczzdasdadsadsad"
+         data-media="[{&quot;logoImage&quot;:&quot;//p1-ofp.static.pub/fes/cms/2021/01/27/0fdx5uaic103zzgjjukazrkog3zv16884877.svg&quot;,&quot;logoImageAlt&quot;:&quot;fb&quot;,&quot;index&quot;:0},{&quot;logoImage&quot;:&quot;//p1-ofp.static.pub/fes/cms/2021/01/27/imusuuergsiiqc60qwcd7cetzvx13h727816.svg&quot;,&quot;logoImageAlt&quot;:&quot;tt&quot;,&quot;index&quot;:1},{&quot;logoImage&quot;:&quot;//p1-ofp.static.pub/fes/cms/2021/01/27/c9qijui0aq9qsk8on2sigyrrxs28yy934829.svg&quot;,&quot;logoImageAlt&quot;:&quot;yt&quot;,&quot;index&quot;:2}]">
+    </div>
+    <div class="thanks_content">
+        <div class="top_view flex">
+            <div class="left_view">
+                <div class="order"></div>
+                <div class="order_item_list">
+                    <div class="view-order-summary">
+                        <a class="view-summary-btn" leclick="toggleViewOrder" data-tkey="viewOrderSummary"><#viewOrderSummary#><div class="arrow"></div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="right_view">
+                <div class="price_info"></div>
+            </div>
+        </div>
+        <div class="middle_view">
+            <div class="create-account-title" data-tkey="createLenovoAccountTitle"><#createLenovoAccountTitle#></div>
+            <div class="create-account-wrap">
+                <div class="program-cards-warp">
+                    <a class="view-card-btn" data-tkey="hideBenefitsOfLenovoId">
+                        <!-- <#hideBenefitsOfLenovoId#> -->
+                    </a>
+                    <div class="program-cards">
+                        <!-- four card -->
+                    </div>
+                </div>
+                <div class="account-form">
+                    <!-- lenovo id -->
+                </div>
+            </div>
+        </div>
+        <div class="help_wrap"></div>
+        <div class="cart_id"></div>
+    </div>
+</div>
+</body>
+
+</html>
