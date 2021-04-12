@@ -28,7 +28,6 @@ export default class Engine {
         ConnectionHelper.create();
         this._orderEventMqConsumer.start();
 
-        debugger
         let _orderView = new ViewFactory().create($CONSTANT.MODEL_TYPES.ORDER,{deviceType:deviceType});
         _orderView.init(DomHelper.$Id("rootContainer"));
         

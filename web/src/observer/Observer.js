@@ -6,6 +6,6 @@ export default class Observer{
 
     }
     onUpdate(item){
-        debugger
+        
     }
 }

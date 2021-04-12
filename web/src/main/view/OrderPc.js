@@ -9,7 +9,6 @@ export default class OrderPc{
     }
 
     appendItem(item){
-        debugger
         // let _orderModel = new ModelFactory().create($CONSTANT.MODEL_TYPES.ORDER);
         // _orderModel.init(data);
     }

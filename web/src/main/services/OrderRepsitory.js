@@ -29,7 +29,6 @@ export default class OrderRepsitory{
         this._obervsers.forEach(x=>{
             let vm = new ViewModel();
             vm.init(DomHelper.$Id("price").value);
-            debugger
             x.filter(vm);
         })
     }
