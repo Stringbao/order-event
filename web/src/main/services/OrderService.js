@@ -20,6 +20,6 @@ export default class OrderService{
             });
         }
 
-        $engine.$eventPublisher.broadcast("changed", finallyResult);
+        order_core_tool.$event_publisher.broadcast($CONSTANT.EVENT_KEYS.ORDER.CHANGED, finallyResult);
     }
 }

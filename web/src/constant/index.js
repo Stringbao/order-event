@@ -4,6 +4,11 @@ export default {
         MOBILE:2,
         TABLET:3
     },
+    EVENT_KEYS:{
+        ORDER:{
+            CHANGED:"changed"
+        }
+    },
     LOOP:{
         TIME:50
     },

@@ -1,6 +1,5 @@
 
 import ViewModel from "@helper/ViewModel.js";
-import DomHelper from "@helper/DomHelper.js";
 
 //data repsitory
 export default class OrderRepsitory{
@@ -14,21 +13,20 @@ export default class OrderRepsitory{
     }
 
     update(item){
-        let result = {exist:false, item:null};
-        this._list.forEach(x=>{
+        let exist = false;
+        this._list.forEach((x,idx)=>{
             if(x.id == item.id){
-                result = {exist:true, item:x};;
+                this._list[idx] = item;
+                exist = true;
             }
         })
-        if(result.exist){
-            result.item = item;
-        }else{
+        if(!exist){
             this._list.push(item);
         }
 
         this._obervsers.forEach(x=>{
             let vm = new ViewModel();
-            vm.init(DomHelper.$Id("price").value);
+            vm.init(order_core_tool.$domHelper.$Id("price").value);
             x.filter(vm);
         })
     }
