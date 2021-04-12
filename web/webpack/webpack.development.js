@@ -59,8 +59,8 @@ module.exports = merge(common, {
         // }),
         new webpack.HotModuleReplacementPlugin(),
         new SSICompileWebpackPlugin({
-            // localBaseDir: path.resolve(__dirname, '../Inc'),
-            // publicPath: ''
+            localBaseDir: path.resolve(__dirname, '../../core/inc'),
+            publicPath: ''
             // remoteBasePath:"https://j1-ofp.lenovouat.cn",
             // minify: false
         })
