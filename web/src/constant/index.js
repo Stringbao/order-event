@@ -10,7 +10,7 @@ export default {
         }
     },
     LOOP:{
-        TIME:1000
+        TIME:50
     },
     MODEL_TYPES:{
         ORDER:"Order"
