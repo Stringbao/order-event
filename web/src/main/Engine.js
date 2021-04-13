@@ -12,10 +12,9 @@ export default class Engine {
 
         this.$orderEventMQ = new OrderEventMQ();        
         this.$orderRepsitory = new OrderRepsitory();    
-        this._orderService = new OrderService();
+        this.$orderService = new OrderService();
         this._orderEventMqConsumer = new OrderEventMqConsumer();
-
-        this.$orderRepsitory.register(this._orderService);
+        this.$orderService.register(this._orderEventMqConsumer);
     }
 
     notice(){}

@@ -45,7 +45,8 @@ export default class OrderPc{
     init(){
         let that = this;
         this._priceEl.addEventListener("input",function(event){
-            order_core_tool.$domHelper.removeTrs(that._tbodyEl)
+            $engine.$orderService.filter({_price:that._priceEl.value});
+            order_core_tool.$domHelper.removeTrs(that._tbodyEl);
         },false)
     }
 }

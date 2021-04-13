@@ -1,7 +1,6 @@
-
 export default class OrderService{
     constructor(){
-
+        this.obList = [];
     }
 
     getData(){
@@ -9,17 +8,12 @@ export default class OrderService{
     }
 
     filter(model){
-        let price = model._price;
-        let data = this.getData();
-        let finallyResult = null;
-        if(!price){
-            finallyResult = data;
-        }else{
-            finallyResult = data.filter(x=>{
-                return x.price == price;
-            });
+        for(var index = 0; index < this.obList.length; index++){
+            this.obList[index].update({price:model._price});
         }
+    }
 
-        order_core_tool.$event_publisher.broadcast($CONSTANT.EVENT_KEYS.ORDER.CHANGED, finallyResult);
+    register(ob){
+        this.obList.push(ob);
     }
 }
