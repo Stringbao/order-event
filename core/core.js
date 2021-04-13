@@ -1,6 +1,7 @@
 import DomHelper from "./domHelper.js";
 import EventPublisher from "./eventPublisher.js";
 import CustomerEvents from "./customerEvent.js";
+import Prop from "./prop.js";
 
 const $event_publisher = new EventPublisher();
 const $customer_events = new CustomerEvents();

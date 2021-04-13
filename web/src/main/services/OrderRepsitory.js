@@ -15,6 +15,7 @@ export default class OrderRepsitory{
         if(!exist){
             this._list.push(item);
         }
+        console.log("-----------------", this._list);
     }
 
     filter(price){

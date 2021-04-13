@@ -5,7 +5,7 @@
         "event_name": "CREATED",
         "id": "d0791ce1",
         "item": "Caesar salad",
-        "price": 4692,
+        "price": 1,
         "sent_at_second": 6
     },
     {
@@ -14,7 +14,7 @@
         "event_name": "COOKED",
         "id": "d0791ce1",
         "item": "Caesar salad",
-        "price": 4692,
+        "price": 1,
         "sent_at_second": 13
     },
     {
@@ -23,7 +23,7 @@
         "event_name": "DRIVER_RECEIVED",
         "id": "d0791ce1",
         "item": "Caesar salad",
-        "price": 4692,
+        "price": 1,
         "sent_at_second": 18
     },
     {
@@ -32,7 +32,7 @@
         "event_name": "DELIVERED",
         "id": "d0791ce1",
         "item": "Caesar salad",
-        "price": 4692,
+        "price": 1,
         "sent_at_second": 22
     },
     {
@@ -41,7 +41,7 @@
         "event_name": "CREATED",
         "id": "53e869ef",
         "item": "Chicken pad thai",
-        "price": 4314,
+        "price": 2,
         "sent_at_second": 10
     },
     {
@@ -50,7 +50,7 @@
         "event_name": "COOKED",
         "id": "53e869ef",
         "item": "Chicken pad thai",
-        "price": 4314,
+        "price": 2,
         "sent_at_second": 17
     },
     {
@@ -59,7 +59,7 @@
         "event_name": "DRIVER_RECEIVED",
         "id": "53e869ef",
         "item": "Chicken pad thai",
-        "price": 4314,
+        "price": 2,
         "sent_at_second": 25
     },
     {
@@ -68,7 +68,7 @@
         "event_name": "DELIVERED",
         "id": "53e869ef",
         "item": "Chicken pad thai",
-        "price": 4314,
+        "price": 2,
         "sent_at_second": 34
     },
     {
@@ -77,7 +77,7 @@
         "event_name": "CREATED",
         "id": "e7fb7e0f",
         "item": "Taco salad",
-        "price": 226,
+        "price": 1,
         "sent_at_second": 3
     },
     {
@@ -86,7 +86,7 @@
         "event_name": "COOKED",
         "id": "e7fb7e0f",
         "item": "Taco salad",
-        "price": 226,
+        "price": 1,
         "sent_at_second": 11
     },
     {
@@ -95,7 +95,7 @@
         "event_name": "DRIVER_RECEIVED",
         "id": "e7fb7e0f",
         "item": "Taco salad",
-        "price": 226,
+        "price": 1,
         "sent_at_second": 20
     },
     {
@@ -104,7 +104,97 @@
         "event_name": "DELIVERED",
         "id": "e7fb7e0f",
         "item": "Taco salad",
-        "price": 226,
+        "price": 1,
         "sent_at_second": 25
+    },
+    {
+        "customer": "Karina Lopez",
+        "destination": "89548 Andrew Road Apt. 797, Lake Phillipville, CA 92007",
+        "event_name": "CREATED",
+        "id": "b11b8a69",
+        "item": "Fish tacos",
+        "price": 2,
+        "sent_at_second": 10
+    },
+    {
+        "customer": "Karina Lopez",
+        "destination": "89548 Andrew Road Apt. 797, Lake Phillipville, CA 92007",
+        "event_name": "COOKED",
+        "id": "b11b8a69",
+        "item": "Fish tacos",
+        "price": 2,
+        "sent_at_second": 15
+    },
+    {
+        "customer": "Karina Lopez",
+        "destination": "89548 Andrew Road Apt. 797, Lake Phillipville, CA 92007",
+        "event_name": "DRIVER_RECEIVED",
+        "id": "b11b8a69",
+        "item": "Fish tacos",
+        "price": 2,
+        "sent_at_second": 22
+    },
+    {
+        "customer": "Karina Lopez",
+        "destination": "89548 Andrew Road Apt. 797, Lake Phillipville, CA 92007",
+        "event_name": "DELIVERED",
+        "id": "b11b8a69",
+        "item": "Fish tacos",
+        "price": 2,
+        "sent_at_second": 30
+    },
+    {
+        "customer": "Heather Hughes",
+        "destination": "7465 Willis Fork, Lake Gabrielle, CA 92816",
+        "event_name": "CREATED",
+        "id": "0b63508d",
+        "item": "Berry smoothie",
+        "price": 3,
+        "sent_at_second": 5
+    },
+    {
+        "customer": "Heather Hughes",
+        "destination": "7465 Willis Fork, Lake Gabrielle, CA 92816",
+        "event_name": "COOKED",
+        "id": "0b63508d",
+        "item": "Berry smoothie",
+        "price": 3,
+        "sent_at_second": 14
+    },
+    {
+        "customer": "Heather Hughes",
+        "destination": "7465 Willis Fork, Lake Gabrielle, CA 92816",
+        "event_name": "DRIVER_RECEIVED",
+        "id": "0b63508d",
+        "item": "Berry smoothie",
+        "price": 3,
+        "sent_at_second": 22
+    },
+    {
+        "customer": "Heather Hughes",
+        "destination": "7465 Willis Fork, Lake Gabrielle, CA 92816",
+        "event_name": "DELIVERED",
+        "id": "0b63508d",
+        "item": "Berry smoothie",
+        "price": 3,
+        "sent_at_second": 31
+    },
+    {
+        "customer": "Juan Johnson",
+        "destination": "20666 Davis Row Suite 226, Josephport, CA 93154",
+        "event_name": "CREATED",
+        "id": "cdb5c39d",
+        "item": "Pepperoni pizza",
+        "price": 4,
+        "sent_at_second": 10
+    },
+    {
+        "customer": "Juan Johnson",
+        "destination": "20666 Davis Row Suite 226, Josephport, CA 93154",
+        "event_name": "COOKED",
+        "id": "cdb5c39d",
+        "item": "Pepperoni pizza",
+        "price": 4,
+        "sent_at_second": 13
     }
 ]

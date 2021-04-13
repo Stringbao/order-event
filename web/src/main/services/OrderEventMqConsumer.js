@@ -1,9 +1,12 @@
+
 export default class OrderEventMqConsumer {
     constructor() {
         this._currentItem = null;
-        this.filterPrice = null;
-        this.needFilterFlag = false;
-        this.finallyResult = null;
+        this._filterPrice = null;
+        this._finallyResult = null;
+
+        this._index = 0;
+        this._pageSize = 2;
     }
 
     execute() {
@@ -17,14 +20,24 @@ export default class OrderEventMqConsumer {
             //update repsitory
             this._currentItem && $engine.$orderRepsitory.update(this._currentItem);
             //send message to view need to update
-            this.finallyResult = $engine.$orderRepsitory.filter(this.filterPrice);
-            this.finallyResult.length > 0 && order_core_tool.$event_publisher.broadcast($CONSTANT.EVENT_KEYS.ORDER.CHANGED, this.finallyResult);
-
+            this._finallyResult = $engine.$orderRepsitory.filter(this._filterPrice);
+            
+            let groupList = this._finallyResult.group(this._pageSize);
+            let renderData = groupList[this._index];
+            renderData && order_core_tool.$event_publisher.broadcast($CONSTANT.EVENT_KEYS.ORDER.CHANGED, renderData);
             this.start();
         }, $CONSTANT.LOOP.TIME)
     }
 
     update(event) {
-        this.filterPrice = event.price;
+        this._filterPrice = event.price;
+    }
+
+    resetIndex(){
+        this._index = 0;
+    }
+
+    loadMore(){
+        this._index++;
     }
 }

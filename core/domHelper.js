@@ -6,7 +6,7 @@ export default{
     setTrHtml(tr, item){
         let html = "";
         for(let i in item){
-            html += `<td>${item[i]}</td>`
+            html += `<td>${item[i]}</td>`;
         }
         tr.innerHTML = html;
     },

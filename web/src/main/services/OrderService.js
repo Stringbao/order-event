@@ -13,6 +13,18 @@ export default class OrderService{
         }
     }
 
+    loadMore(){
+        for(var index = 0; index < this.obList.length; index++){
+            this.obList[index].loadMore();
+        }
+    }
+
+    resetIndex(){
+        for(var index = 0; index < this.obList.length; index++){
+            this.obList[index].resetIndex();
+        }
+    }
+
     register(ob){
         this.obList.push(ob);
     }
