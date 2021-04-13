@@ -19,15 +19,8 @@ export default class Engine {
 
     notice(){}
 
-    init(deviceType, rootContainer){
+    init(){
         ConnectionHelper.create();
         this._orderEventMqConsumer.start();
-
-        let _orderView = new ViewFactory().create($CONSTANT.MODEL_TYPES.ORDER,{deviceType:deviceType});
-        _orderView.init(order_core_tool.$domHelper.$Id("rootContainer"));
-        
-        order_core_tool.$event_publisher.on($CONSTANT.EVENT_KEYS.ORDER.CHANGED, (x)=>{
-            _orderView.appendItem(x);
-        })
     }
 }

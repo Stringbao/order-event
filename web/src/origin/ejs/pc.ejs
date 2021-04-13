@@ -1,47 +1,78 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Reader</title>
     <!--#include file="/global.html" -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
-
 <body class="socket_wrapper">
-    <div class="le_list_breadcrumb_pannel">
-        Socket Client Demo
-    </div>
-    <div class="le_list_search_pannel clearfix">
-        <div class="col4">
-            <div class="form-item">
-                <div class="form-item-label">
-                    Price:
-                </div>
-                <div class="form-item-div">
-                    <input type="text" id="price" class="form-item-input">
+    <div id="app">
+        <div class="le_list_breadcrumb_pannel">
+            Socket Client Demo
+        </div>
+        <div class="le_list_search_pannel clearfix">
+            <div class="col4">
+                <div class="form-item">
+                    <div class="form-item-label">
+                        Price:
+                    </div>
+                    <div class="form-item-div">
+                        <input v-model="price" type="text" @input="priceChanged" class="form-item-input">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="rootContainer">
-        <div class="search_box">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>customer</th>
-                        <th>destination</th>
-                        <th>event_name</th>
-                        <th>id</th>
-                        <th>item</th>
-                        <th>price</th>
-                        <th>sent_at_second</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody">
-                    
-                </tbody>
-            </table>
-        </div>
-        <div class="search_loadmore">
-            <span id="loadmore" class="asBtn loadmore">Load More</span>
+        <div id="rootContainer">
+            <div class="search_box">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>customer</th>
+                            <th>destination</th>
+                            <th>event_name</th>
+                            <th>id</th>
+                            <th>item</th>
+                            <th>price</th>
+                            <th>sent_at_second</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr v-for="item in orderData">
+                            <td>{{item.customer}}</td>
+                            <td>{{item.destination}}</td>
+                            <td>{{item.event_name}}</td>
+                            <td>{{item.id}}</td>
+                            <td>{{item.item}}</td>
+                            <td>{{item.price}}</td>
+                            <td>{{item.sent_at_second}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="search_loadmore">
+                <span @click="loadMore" class="asBtn loadmore">Load More</span>
+            </div>
         </div>
     </div>
 </body>
+</html>
+<script>
+    let vue = new Vue({
+        el: '#app',
+        data: {
+            price:"",
+            orderData: []
+        },
+        methods:{
+            priceChanged(){
+                $engine.$orderService.filter(this.price);
+            },
+            loadMore(){
+                $engine.$orderService.loadMore();
+            }
+        }
+    })
+</script>

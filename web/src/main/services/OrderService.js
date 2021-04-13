@@ -7,9 +7,9 @@ export default class OrderService{
         return $engine.$orderRepsitory._list;
     }
 
-    filter(model){
+    filter(price){
         for(var index = 0; index < this.obList.length; index++){
-            this.obList[index].update({price:model._price});
+            this.obList[index].update(price);
         }
     }
 

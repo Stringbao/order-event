@@ -1,4 +1,7 @@
 export default {
+    PAGEING:{
+        PAGE_SIZE:10
+    },
     TERMINAL:{
         PC:1,
         MOBILE:2,

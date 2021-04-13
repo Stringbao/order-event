@@ -37,9 +37,6 @@ export default class OrderPc {
         if(bl){
             return;
         }
-        if(this._oldList.length > items.length){
-            order_core_tool.$domHelper.removeTrs(this._tbodyEl);
-        }
         items.forEach(x => {
             let result = this.checkTrExist(x);
             if (result.exist) {

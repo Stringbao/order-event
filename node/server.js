@@ -4,7 +4,7 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
 const PORT = 4000;
-const DATA_FILE = __dirname + '/order-data1.json';
+const DATA_FILE = __dirname + '/order-data.json';
 
 // Initialize order data.
 const orders = JSON.parse(fs.readFileSync(DATA_FILE));

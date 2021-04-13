@@ -6,12 +6,21 @@ export default class OrderEventMqConsumer {
         this._finallyResult = null;
 
         this._index = 0;
-        this._pageSize = 2;
+        this._pageSize = $CONSTANT.PAGEING.PAGE_SIZE;
     }
 
     execute() {
         //get need to deal item from queue
         this._currentItem = $engine.$orderEventMQ.pop();
+    }
+
+    getGroupData(source, index){
+        let currentIndex = (index + 1) * this._pageSize;
+        if(currentIndex >= source.length){
+            return source;
+        }
+        let res = source.slice(0, currentIndex);
+        return res;
     }
 
     start() {
@@ -21,20 +30,17 @@ export default class OrderEventMqConsumer {
             this._currentItem && $engine.$orderRepsitory.update(this._currentItem);
             //send message to view need to update
             this._finallyResult = $engine.$orderRepsitory.filter(this._filterPrice);
-            
-            let groupList = this._finallyResult.group(this._pageSize);
-            let renderData = groupList[this._index];
-            renderData && order_core_tool.$event_publisher.broadcast($CONSTANT.EVENT_KEYS.ORDER.CHANGED, renderData);
+            //get render data
+            let renderData = this.getGroupData(this._finallyResult, this._index);
+            //bind render data
+            vue.orderData = renderData;
             this.start();
         }, $CONSTANT.LOOP.TIME)
     }
 
-    update(event) {
-        this._filterPrice = event.price;
-    }
-
-    resetIndex(){
+    update(price) {
         this._index = 0;
+        this._filterPrice = price;
     }
 
     loadMore(){
