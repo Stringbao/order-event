@@ -1,9 +1,15 @@
 
-1: 进入node  
-npm install --> npm run start
+1: start node server  
+cd node --> npm install --> npm run start
 
-2:进入web
-npm install --> npm run dev
+2:start web server
+cd web --> npm install --> npm run dev
 
-PS: core项目是一些公用的工具，里面的公用资源是通过SSI模块引入
-<!--#include file="/global.html" -->
+PS: 
+core folder is the global resource that will included in the full site by the nginx SSI module.
+we can build the tool.min.js in core project. And tool.min.js will exposed a global Object in window
+named: order_core_tool
+how to include the fragment: <!--#include file="/global.html" -->
+
+
+
