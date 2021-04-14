@@ -13,6 +13,7 @@ class Socket{
         this._socket = io.connect($CONSTANT.SERVER.ADDRESS);
         this._socket.on('order_event', (data) => {
             console.log("reecive data: ", data);
+            vue.receive += data.length;
             let orderEventMqProvider = new OrderEventMqProvider();
             orderEventMqProvider.execute(data);
         });

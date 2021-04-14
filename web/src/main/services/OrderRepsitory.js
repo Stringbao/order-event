@@ -16,6 +16,7 @@ export default class OrderRepsitory{
             this._list.push(item);
         }
         console.log("-----------------", this._list);
+        vue.repository = this._list.length;
     }
 
     filter(price){

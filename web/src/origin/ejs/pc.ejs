@@ -23,6 +23,12 @@
                         <input v-model="price" type="text" @input="priceChanged" class="form-item-input">
                     </div>
                 </div>
+                <div class="form-item">
+                    <div class="form-item-label">
+                        Receive:{{receive}}
+                        Repository:{{repository}}
+                    </div>
+                </div>
             </div>
         </div>
         <div id="rootContainer">
@@ -63,6 +69,8 @@
     let vue = new Vue({
         el: '#app',
         data: {
+            receive:0,
+            repository:0,
             price:"",
             orderData: []
         },
